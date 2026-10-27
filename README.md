@@ -63,9 +63,19 @@ Instagram/Facebook). If those embeds ever need secrets, add them as Worker
 
 ## Notes / known diffs from WordPress
 
-- Broken staging images (`salonk.tpaulshippy.com/…` — host is dead, broken on the live
-  site too) replaced with styled text cards (Halo Couture, Jon Renau, CJ Academy,
-  Goldie Locks link kept).
-- Divi/Elegant-Themes footer credit dropped; own copyright line used.
-- `SalonK-1.jpg` / `SalonK-39.jpg` hero photos vendored locally (run them through an
-  optimizer before deploy if you want smaller uploads).
+- Logos/images load from the site's own `/wp-content/uploads/…` URLs (verified
+  in a real browser). An older cached copy of the pages referenced a dead
+  staging host (`salonk.tpaulshippy.com`, NXDOMAIN) — those URLs are not used
+  by the live pages and are not referenced here.
+- The `…/CJ-Academy-…webp` URL on the Products page currently serves a
+  “Replica Scalp Professional System” logo; it is vendored as
+  `replica-scalp.webp`.
+- Meet Kelley contains a photo parallax band (`SalonK-12.jpg`, salon interior).
+  On the WordPress site it renders as a blank white gap because the background
+  URL is hard-coded `http://` and browsers block it as mixed content on the
+  `https://` page. The static replica serves the photo locally, so the band
+  displays as originally designed — the one intentional visual difference.
+- Divi/Elegant-Themes footer credit kept to match the original footer.
+- `SalonK-1.jpg` / `SalonK-39.jpg` / `SalonK-12.jpg` hero photos vendored
+  locally (run them through an optimizer before deploy if you want smaller
+  uploads).
