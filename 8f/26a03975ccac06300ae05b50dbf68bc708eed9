@@ -1,0 +1,46 @@
+public/blog/2016/05/11/449-2/index.html
+  h_6bbd00fe0a456a 247
+public/blog/2016/05/11/review-from-isabel/index.html
+  h_6bbd00fe0a456a 247
+public/blog/2016/05/11/review-from-jaimie/index.html
+  h_6bbd00fe0a456a 247
+public/blog/2016/05/11/review-from-jennifer/index.html
+  h_6bbd00fe0a456a 248
+public/blog/2016/05/11/review-from-ronni/index.html
+  h_6bbd00fe0a456a 247
+public/blog/2016/05/11/review-from-vanessa/index.html
+  h_6bbd00fe0a456a 253
+public/blog/2016/05/12/review-from-angela/index.html
+  h_6bbd00fe0a456a 248
+public/blog/2016/05/13/jennifer-in-phoenix-arizona/index.html
+  h_6bbd00fe0a456a 248
+public/blog/2016/08/08/review-from-haley/index.html
+  h_6bbd00fe0a456a 185
+public/blog/2016/08/08/review-from-sherri/index.html
+  h_6bbd00fe0a456a 185
+public/blogreviews/index.html
+  h_6bbd00fe0a456a 482
+public/index.html
+  h_6bbd00fe0a456a 452
+public/meet-kelley/index.html
+  h_6bbd00fe0a456a 470
+public/payment-plans/index.html
+  h_6bbd00fe0a456a 224
+public/products/index.html
+  h_6bbd00fe0a456a 421
+public/services/index.html
+  h_6bbd00fe0a456a 536
+public/social-media-gallery/index.html
+  h_6bbd00fe0a456a 635
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8f26a03975ccac06300ae05b50dbf68bc708eed9",
+  "prompts": {},
+  "humans": {
+    "h_6bbd00fe0a456a": {
+      "author": "Paul Shippy <pshippy@gmail.com>"
+    }
+  }
+}
