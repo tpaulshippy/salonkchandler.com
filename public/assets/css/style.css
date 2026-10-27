@@ -267,3 +267,6 @@ footer img{width:17px;height:17px;vertical-align:-3px;margin-right:.65em;opacity
   .band .contact3{gap:1.8rem;padding:50px 0}
   #schedule{height:160px}
 }
+
+.cap-cell{grid-column:4}
+@media(max-width:760px){.cap-cell{grid-column:auto}}
