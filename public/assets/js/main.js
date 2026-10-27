@@ -11,6 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
+  const hdr = document.querySelector(".site-header");
+  if (hdr) {
+    const onScroll = () =>
+      hdr.classList.toggle("compact", window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
   const y = document.getElementById("yr");
   if (y) y.textContent = new Date().getFullYear();
 
