@@ -28,9 +28,10 @@ export default {
       headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
       headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
     }
-    // Long-cache immutable local assets.
+    // Versioned local assets (style.css?v=N): cache 1h so redesigns roll out
+    // promptly; unversioned URLs stay immutable-friendly.
     if (url.pathname.startsWith("/assets/")) {
-      headers.set("Cache-Control", "public, max-age=31536000, immutable");
+      headers.set("Cache-Control", "public, max-age=3600");
     }
     return new Response(res.body, { status: res.status, headers });
   },
