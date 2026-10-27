@@ -67,8 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         full.hidden = !full.hidden;
         a.textContent = full.hidden ? "read more" : "read less";
       } else if (card) {
-        const collapsed = card.classList.toggle("collapsed");
-        a.textContent = collapsed ? "read more" : "read less";
+        card.classList.toggle("collapsed");
       }
     });
   });
