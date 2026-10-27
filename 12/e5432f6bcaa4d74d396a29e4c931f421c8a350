@@ -1,0 +1,30 @@
+public/404.html
+  h_6bbd00fe0a456a 9,18
+public/assets/css/style.css
+  h_6bbd00fe0a456a 235-245
+public/blogreviews/index.html
+  h_6bbd00fe0a456a 12,83
+public/index.html
+  h_6bbd00fe0a456a 12,100
+public/meet-kelley/index.html
+  h_6bbd00fe0a456a 12,99
+public/payment-plans/index.html
+  h_6bbd00fe0a456a 12,96
+public/products/index.html
+  h_6bbd00fe0a456a 12,84
+public/services/index.html
+  h_6bbd00fe0a456a 12,168
+public/social-media-gallery/index.html
+  h_6bbd00fe0a456a 12,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "12e5432f6bcaa4d74d396a29e4c931f421c8a350",
+  "prompts": {},
+  "humans": {
+    "h_6bbd00fe0a456a": {
+      "author": "Paul Shippy <pshippy@gmail.com>"
+    }
+  }
+}
