@@ -61,7 +61,7 @@ main{padding-top:89px}
 
 /* Hero (home fullscreen) */
 .hero{position:relative;min-height:calc(100vh - 96px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:#5d2c87 url("/assets/img/SalonK-39.jpg") center/cover no-repeat}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(93,44,135,.75)}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(93,44,135,.5)}
 .hero-inner{position:relative;z-index:1;padding:4rem 5%;max-width:800px}
 .hero h1{color:#fff;font-weight:700}
 .hero .sub{font-size:clamp(.95rem,2vw,1.2rem)}
