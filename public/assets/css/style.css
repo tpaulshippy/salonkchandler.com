@@ -31,6 +31,7 @@ img{max-width:100%;height:auto}
 /* Header — split centered logo, fixed */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.1)}
 .site-header .bar{display:flex;align-items:center;justify-content:center;gap:0 1.55rem;padding:.5rem 0}
+.site-header .brand{line-height:0}
 .site-header .brand img{height:72px;width:auto}
 .nav{display:flex;gap:1.7rem;align-items:center}
 .nav a{color:var(--purple-80);font-size:16px;text-transform:uppercase;white-space:nowrap}
