@@ -51,7 +51,6 @@ img{max-width:100%;height:auto}
   .nav a{padding:.55rem 5%;border-bottom:1px solid rgba(0,0,0,.05);padding-bottom:.55rem}
 }
 main{padding-top:89px}
-@media(max-width:980px){main{padding-top:110px}}
 
 /* Buttons */
 .btn{display:inline-block;background:rgba(198,71,136,.8);color:#fff!important;padding:4px 14px;border-radius:3px;font-size:14px;font-weight:400;text-transform:uppercase;text-decoration:none!important;border:0;cursor:pointer;font-family:var(--font)}
