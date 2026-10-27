@@ -10,12 +10,12 @@ export default {
 
     // Legacy WordPress gallery slug still indexed in search results.
     if (url.pathname === "/gallery" || url.pathname === "/gallery/") {
-      return Response.redirect("/social-media-gallery/", 301);
+      return Response.redirect(new URL("/social-media-gallery/", url).toString(), 301);
     }
     // Old /skwp/* upload URLs referenced across the web: send to homepage.
     // (All display assets are bundled locally under /assets/img/.)
     if (url.pathname.startsWith("/skwp/")) {
-      return Response.redirect("/", 301);
+      return Response.redirect(new URL("/", url).toString(), 301);
     }
 
     const res = await env.ASSETS.fetch(request);
