@@ -138,8 +138,10 @@ main{padding-top:89px}
 
 /* Cert / logo grids (no cards — plain like Divi) */
 .logos{display:grid;gap:0 3.5rem;align-items:start;text-align:center}
-.logos>div{margin-bottom:65px}
-.logos.c4>div:nth-last-child(-n+4){margin-bottom:0}
+.logos.c4{gap:65px 56px}
+.logos.c4>div{margin-bottom:0}
+.logos.c3{gap:0 56px}
+.cert-col>div{margin-bottom:30px}
 .logos.c4{grid-template-columns:repeat(4,1fr)}
 .logos.c3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.logos.c4{grid-template-columns:repeat(2,1fr)}.logos.c3{grid-template-columns:repeat(2,1fr)}}
