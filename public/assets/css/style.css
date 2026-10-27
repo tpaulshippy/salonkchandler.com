@@ -270,3 +270,14 @@ footer img{width:17px;height:17px;vertical-align:-3px;margin-right:.65em;opacity
 
 .cap-cell{grid-column:4}
 @media(max-width:760px){.cap-cell{grid-column:auto}}
+
+@media(max-width:980px){
+  main>section{padding-top:50px;padding-bottom:50px}
+  main>div.page-hero{padding-top:50px;padding-bottom:50px}
+  .band .wrap{padding-top:40px;padding-bottom:40px}
+  .hero{padding-top:50px;padding-bottom:50px;min-height:100vh}
+  .hero-inner{padding-top:0;padding-bottom:0}
+  .band-photo{min-height:161px}
+  .slider{min-height:335px}
+  .logos img{max-width:none}
+}
