@@ -96,7 +96,8 @@ main{padding-top:96px}
 .parallax::after{content:"";position:absolute;inset:0;background:rgba(93,44,135,.75)}
 .parallax .wrap{position:relative;z-index:1;max-width:860px}
 .parallax h2{color:#fff}
-@media(max-width:700px){.parallax{background-attachment:scroll}}
+.band-photo{background:#fff url("/assets/img/SalonK-12.jpg") center/cover fixed no-repeat;min-height:440px}
+@media(max-width:700px){.parallax,.band-photo{background-attachment:scroll}}
 
 /* Interior page hero */
 .page-hero{background:var(--purple);color:#fff;text-align:center;padding:2.6rem 5%}
