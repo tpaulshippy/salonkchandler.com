@@ -1,0 +1,14 @@
+src/worker.js
+  h_6bbd00fe0a456a 13,18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8e86455334ccd487430ae06995e0845544e021c4",
+  "prompts": {},
+  "humans": {
+    "h_6bbd00fe0a456a": {
+      "author": "Paul Shippy <pshippy@gmail.com>"
+    }
+  }
+}
