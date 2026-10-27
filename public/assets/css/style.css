@@ -219,3 +219,16 @@ footer img{width:17px;height:24px;vertical-align:middle;margin-right:.65em;opaci
 .band.gift .wrap{max-width:800px;padding:50px 0}
 @media(max-width:760px){.logos.c3,.logos.c4{grid-template-columns:1fr}.slide.active{grid-template-columns:1fr}.slide .stars{justify-self:start}}
 @media(max-width:560px){}
+
+.quote-sec{padding:15px 0 25px}
+.about-sec{padding:38px 0 20px}
+.video-shell iframe{display:block}
+.bio-sec,.cert-sec,.talent-sec{padding:38px 0}
+.band-photo{min-height:478px}
+.grid-sec{padding:38px 0}
+.menu-sec{padding:5px 0 0}
+.slider-sec{padding:25px 0}
+.morerev-sec{padding:38px 0 0}
+.gal-sec{padding:64px 0 38px}
+.pay-sec{padding:58px 0 23px}
+#schedule{height:62px}
