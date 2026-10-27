@@ -1,0 +1,46 @@
+public/blog/2016/05/11/449-2/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,183,218-222
+public/blog/2016/05/11/review-from-isabel/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,183,218-222
+public/blog/2016/05/11/review-from-jaimie/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,183,218-222
+public/blog/2016/05/11/review-from-jennifer/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,184,219-223
+public/blog/2016/05/11/review-from-ronni/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,183,218-222
+public/blog/2016/05/11/review-from-vanessa/index.html
+  h_6bbd00fe0a456a 93,99-103,105-106,189,224-228
+public/blog/2016/05/12/review-from-angela/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,184,219-223
+public/blog/2016/05/13/jennifer-in-phoenix-arizona/index.html
+  h_6bbd00fe0a456a 92,98-102,104-105,184,219-223
+public/blog/2016/08/08/review-from-haley/index.html
+  h_6bbd00fe0a456a 91,97-101,103-104,156-160
+public/blog/2016/08/08/review-from-sherri/index.html
+  h_6bbd00fe0a456a 91,97-101,103-104,156-160
+public/blogreviews/index.html
+  h_6bbd00fe0a456a 102,108-112,114-115,226,230,240,244,254,258,268,272,282,286,353,355,359,364,366,370,375,377,381,400,402,406,411,413,417,453-457
+public/index.html
+  h_6bbd00fe0a456a 89,95-99,101-102,423-427
+public/meet-kelley/index.html
+  h_6bbd00fe0a456a 95,101-105,107-108,441-445
+public/payment-plans/index.html
+  h_6bbd00fe0a456a 82,88-92,94-95,195-199
+public/products/index.html
+  h_6bbd00fe0a456a 90,96-100,102-103,392-396
+public/services/index.html
+  h_6bbd00fe0a456a 84,90-94,96-97,507-511
+public/social-media-gallery/index.html
+  h_6bbd00fe0a456a 85,91-95,97-98,606-610
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6b604472c97693bb1bad4f3008157f3de652c46b",
+  "prompts": {},
+  "humans": {
+    "h_6bbd00fe0a456a": {
+      "author": "Paul Shippy <pshippy@gmail.com>"
+    }
+  }
+}
