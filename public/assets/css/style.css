@@ -252,3 +252,18 @@ footer img{width:17px;height:17px;vertical-align:-3px;margin-right:.65em;opacity
 .ig-head{margin-bottom:36px}
 .more-toggle{color:var(--teal)}
 .rev-grid .full[hidden]{display:none}
+
+.only-mobile-band{display:none}
+@media(max-width:980px){
+  .page-hero{min-height:0}
+  .hero{min-height:100vh}
+  .hero-inner{padding:50px 10px}
+  .only-mobile .price-item{display:block}
+  .only-mobile .price-item .nm{display:inline;padding-bottom:0}
+  .only-mobile .price-item .nm::after{content:" \2026  "}
+  .only-mobile .price-item .amt{display:inline}
+  .only-desktop-band{display:none}
+  .only-mobile-band{display:block}
+  .band .contact3{gap:1.8rem;padding:50px 0}
+  #schedule{height:160px}
+}
