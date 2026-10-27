@@ -33,11 +33,16 @@ img{max-width:100%;height:auto}
 .site-header .bar{display:flex;align-items:center;justify-content:center;gap:0 1.55rem;padding:12px 0 5px}
 .site-header .brand{line-height:0}
 .site-header .brand img{height:72px;width:auto}
+.navs{display:contents}
 .nav{display:flex;gap:1.7rem;align-items:center;align-self:flex-end}
+.site-header .bar nav[aria-label="Primary left"]{order:1}
+.site-header .brand{order:2}
+.site-header .bar nav[aria-label="Primary right"]{order:3}
+.menu-btn{order:4}
 .nav a{color:var(--purple-80);font-size:16px;font-weight:400;text-transform:uppercase;white-space:nowrap;padding-bottom:29px}
 .nav a:hover{color:var(--teal);text-decoration:none}
 .nav a[aria-current="page"]{color:var(--teal)}
-.menu-btn{display:none;background:rgba(0,0,0,.05);border:0;border-radius:5px;padding:9px 10px;font-size:.9rem;cursor:pointer;color:#666;font-family:var(--font);width:100%;justify-content:space-between;align-items:center}
+.menu-btn{display:none;background:rgba(0,0,0,.05);color:var(--purple-80);border:0;border-radius:5px;padding:9px 10px;font-size:.9rem;cursor:pointer;color:#666;font-family:var(--font);width:100%;justify-content:space-between;align-items:center}
 .menu-btn .bars{font-size:1.4rem;vertical-align:middle;margin-left:.4rem}
 @media(max-width:980px){
   .site-header{position:static}
@@ -45,9 +50,10 @@ img{max-width:100%;height:auto}
   .site-header .brand{margin:0 auto}
   .site-header .brand img{height:60px}
   .menu-btn{display:flex}
-  .nav{display:none;position:static;background:#fff;flex-direction:column;align-items:stretch;padding:.5rem 5% 1rem;border-top:3px solid var(--pink);box-shadow:0 2px 5px rgba(0,0,0,.1)}
-  .nav.open{display:flex}
-  .nav a{padding:.55rem 5%;border-bottom:1px solid rgba(0,0,0,.05);padding-bottom:.55rem}
+  .navs{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:3px solid var(--purple);box-shadow:0 2px 5px rgba(0,0,0,.1)}
+  .navs.open{display:block}
+  .navs .nav{display:flex;flex-direction:column;align-items:stretch;padding:.5rem 5% 1rem}
+  .navs .nav a{padding:.8rem 5%;border-bottom:1px solid rgba(0,0,0,.05);padding-bottom:.8rem;text-transform:none;font-size:18px}
 }
 main{padding-top:89px}
 

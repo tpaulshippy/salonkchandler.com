@@ -1,13 +1,13 @@
 // Mobile nav, footer year, featured-reviews slider. No backend, no tracking.
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-btn");
-  const navs = document.querySelectorAll(".site-header .nav");
-  if (btn) {
+  const navs = document.querySelector(".site-header .navs");
+  if (btn && navs) {
     btn.addEventListener("click", () => {
-      navs.forEach((n) => n.classList.toggle("open"));
+      navs.classList.toggle("open");
       btn.setAttribute(
         "aria-expanded",
-        btn.getAttribute("aria-expanded") === "true" ? "false" : "true",
+        navs.classList.contains("open") ? "true" : "false",
       );
     });
   }
