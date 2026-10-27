@@ -12,9 +12,17 @@ export default {
     if (url.pathname === "/gallery" || url.pathname === "/gallery/") {
       return Response.redirect(new URL("/social-media-gallery/", url).toString(), 301);
     }
-    // Old /skwp/* upload URLs referenced across the web: send to homepage.
-    // (All display assets are bundled locally under /assets/img/.)
-    if (url.pathname.startsWith("/skwp/")) {
+    // Retired WordPress routes (no WP backend on this static port).
+    if (
+      url.pathname.startsWith("/skwp/") ||
+      url.pathname.startsWith("/wp-admin") ||
+      url.pathname.startsWith("/wp-login") ||
+      url.pathname.startsWith("/wp-content/uploads/") ||
+      url.pathname === "/xmlrpc.php" ||
+      url.pathname === "/feed" ||
+      url.pathname === "/feed/" ||
+      url.pathname.startsWith("/comments/feed")
+    ) {
       return Response.redirect(new URL("/", url).toString(), 301);
     }
 

@@ -1,23 +1,27 @@
-# Salon K — static site on Cloudflare Workers
+# Salon K — static port on Cloudflare Workers
 
-Static replica of [salonkchandler.com](https://salonkchandler.com) (formerly WordPress + Divi).
-No WordPress, no PHP, no database, no build step. Deploy target: **Cloudflare Workers Static Assets**.
+Direct static port of [salonkchandler.com](https://salonkchandler.com)
+(WordPress + Divi). Same rendered HTML/CSS/JS, vendored locally — no
+WordPress, no PHP, no database, no build step. Deploy target:
+**Cloudflare Workers Static Assets**.
 
 ## Structure
 
 ```
 public/                    # everything served (wrangler [assets] directory)
-  index.html               # Home (hero, contact band, quote, about, Vimeo, My Promise)
+  index.html               # Home (verbatim rendered HTML)
   meet-kelley/index.html
   social-media-gallery/index.html   # "Gallery" nav item
   products/index.html
   services/index.html
-  payment-plans/index.html          # Cherry widget embed
-  blogreviews/index.html            # 10 baked-in reviews
+  payment-plans/index.html          # Cherry widget embed (third-party, unchanged)
+  blogreviews/index.html            # featured slider + review grid
+  blog/2016/.../           # 10 review posts (read-more targets, all ported)
   404.html
-  assets/css/style.css     # single stylesheet for the whole site
-  assets/js/main.js        # mobile nav + footer year only
-  assets/img/              # all display images vendored locally
+  robots.txt
+  assets/vendor/           # Divi theme CSS/JS, jQuery, ETmodules fonts,
+                           # all images, IG feed cache — copied from the live
+                           # site and referenced relatively. No hotlinking.
 src/worker.js              # tiny Worker: legacy redirects + security/cache headers
 wrangler.toml              # Workers Static Assets config
 ```
@@ -27,8 +31,6 @@ wrangler.toml              # Workers Static Assets config
 ```bash
 npx wrangler login
 npx wrangler deploy
-# custom domain:
-npx wrangler domains add salonkchandler.com
 ```
 
 Preview locally without an account:
@@ -38,44 +40,35 @@ npx wrangler dev
 # or: python3 -m http.server -d public 8000
 ```
 
-## Backend features found on the live site — and how the static version handles them
+## What was changed vs the live HTML
 
-| Live feature | Tech on WordPress | Static handling — **no backend needed** |
-|---|---|---|
-| Booking / consultation forms | External **JotForm** links (`form.jotform.com/261500575913152`, `…/221646044568055`) | Kept as-is; all CTA buttons link straight to JotForm (it hosts the form + emails). |
-| Payment Plans page | **Cherry** widget (`files.withcherry.com/widgets/widget.js`, slug `salon-k`) | Same third-party `<script>` embed copied into `payment-plans/`; runs 100% client-side. `noscript` fallback lists the phone number. |
-| Gallery / social feed | **Smash Balloon Instagram Feed** plugin (needs WP `admin-ajax.php` + Meta API token server-side) | Replaced with a static snapshot: 20 tiles linking to the live Instagram posts/reels + Follow button. Refresh tiles manually when the feed changes. No token to rotate, nothing to expire. |
-| Blog / Reviews | WordPress posts under `/blog/…` | All 10 reviews baked into `blogreviews/` as plain HTML. New reviews = edit the file. |
-| Hair Replacement nav item | External site `salonk.replicascalp.com` | External link, unchanged. |
-| Maps, Facebook, Instagram, Goldie Locks affiliate link | External links | Unchanged (`target="_blank" rel="noopener"`). |
-| Homepage video | Vimeo embed (`player.vimeo.com/video/167006051`) | Same iframe embed. |
-| Search, comments, accounts, cart | None on the live site | Nothing to replace. |
+Almost nothing — that is the point. Mechanical transforms only:
 
-Net: **zero first-party backend required.** The only servers involved at runtime are
-third parties the browser talks to directly (JotForm, Cherry, Vimeo, Google Fonts,
-Instagram/Facebook). If those embeds ever need secrets, add them as Worker
-`[vars]` — no such need today.
+- Same-origin CSS/JS/image/font URLs rewritten to `/assets/vendor/…`.
+- Dead staging `src` attributes (`salonk.tpaulshippy.com`, NXDOMAIN) pointed at
+  the live `srcset` equivalent, vendored locally. Browsers used `srcset`
+  anyway; this fixes non-srcset clients.
+- Dead staging parallax URL (`kevinmurphy-…jpg` on the gift band) left as-is:
+  it 404s on the live site too (band renders flat purple on both).
+- Third-party embeds untouched: JotForm booking links, Cherry payment widget,
+  Vimeo video, Google Fonts, Instagram/Facebook outbound links, Goldie Locks
+  affiliate link.
+- Removed dead WordPress head cruft: pingback, RSD, wlwmanifest, shortlink,
+  oEmbed discovery, speculation-rules (they only prefetched WP routes).
+- Footer service links (`/skwp/services…`) rewritten to `/services/`
+  (the `/skwp/` path dies with WordPress).
+- The Instagram feed is the server-rendered snapshot baked into the page
+  (same as any visitor sees); the live-update AJAX has no backend here.
+  Refresh the snapshot by re-running the port when the feed changes.
 
 ## Redirects (src/worker.js)
 
-- `/gallery` and `/gallery/` → `/social-media-gallery/` (old WP page slug still indexed)
-- `/skwp/*` → `/` (legacy upload paths referenced around the web)
+- `/gallery` and `/gallery/` → `/social-media-gallery/`
+- `/skwp/*`, `/wp-admin*`, `/wp-login*`, `/wp-content/uploads/*`,
+  `/xmlrpc.php`, `/feed*`, `/comments/feed*` → `/`
 
-## Notes / known diffs from WordPress
+## Backend features
 
-- Logos/images load from the site's own `/wp-content/uploads/…` URLs (verified
-  in a real browser). An older cached copy of the pages referenced a dead
-  staging host (`salonk.tpaulshippy.com`, NXDOMAIN) — those URLs are not used
-  by the live pages and are not referenced here.
-- The `…/CJ-Academy-…webp` URL on the Products page currently serves a
-  “Replica Scalp Professional System” logo; it is vendored as
-  `replica-scalp.webp`.
-- Meet Kelley contains a photo parallax band (`SalonK-12.jpg`, salon interior).
-  On the WordPress site it renders as a blank white gap because the background
-  URL is hard-coded `http://` and browsers block it as mixed content on the
-  `https://` page. The static replica serves the photo locally, so the band
-  displays as originally designed — the one intentional visual difference.
-- Divi/Elegant-Themes footer credit kept to match the original footer.
-- `SalonK-1.jpg` / `SalonK-39.jpg` / `SalonK-12.jpg` hero photos vendored
-  locally (run them through an optimizer before deploy if you want smaller
-  uploads).
+None required. Booking = JotForm, financing = Cherry widget, video = Vimeo —
+all third-party embeds that run client-side. See git history for the earlier
+hand-built attempt and why the verbatim port replaced it.
