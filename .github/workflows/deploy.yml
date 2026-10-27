@@ -1,0 +1,77 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out commit
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify static site
+        run: |
+          set -euo pipefail
+          for p in index.html meet-kelley/index.html social-media-gallery/index.html products/index.html services/index.html payment-plans/index.html blogreviews/index.html 404.html; do
+            test -f "public/$p" || (echo "missing public/$p" && exit 1)
+          done
+          test -f src/worker.js
+          test -f wrangler.toml
+          node --check src/worker.js
+          echo "site files OK"
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4.153.0 deploy 2>&1 | tee "$RUNNER_TEMP/deploy.log"
+          DEPLOY_URL=$(grep -oE 'https://[a-zA-Z0-9.-]+\.workers\.dev' "$RUNNER_TEMP/deploy.log" | head -n 1 || true)
+          if [ -z "$DEPLOY_URL" ]; then
+            # No-asset-change deploys only list custom-domain triggers, so
+            # fall back to the stable workers.dev URL for this worker.
+            DEPLOY_URL="https://salonkchandler.pshippy-245.workers.dev"
+          fi
+          echo "DEPLOY_URL=$DEPLOY_URL" >> "$GITHUB_ENV"
+          echo "Deployed to $DEPLOY_URL"
+
+      - name: Smoke-check live site
+        run: |
+          set -euo pipefail
+          echo "Checking $DEPLOY_URL"
+          Q="?smoke=$GITHUB_SHA"
+          body=$(curl --fail --silent --max-time 20 "$DEPLOY_URL/$Q")
+          grep -q "Helping you Look and Feel Beautiful" <<<"$body"
+          echo "Home page OK"
+          body=$(curl --fail --silent --max-time 20 "$DEPLOY_URL/services/$Q")
+          grep -q "Salon K Services" <<<"$body"
+          echo "Services OK"
+          body=$(curl --fail --silent --max-time 20 "$DEPLOY_URL/blogreviews/$Q")
+          grep -q "Blog and Reviews of Salon K" <<<"$body"
+          echo "Reviews OK"
+          body=$(curl --fail --silent --max-time 20 "$DEPLOY_URL/payment-plans/$Q")
+          grep -q "withcherry" <<<"$body"
+          echo "Payment Plans (Cherry widget) OK"
+          code=$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 20 "$DEPLOY_URL/this-page-does-not-exist-12345$Q")
+          if [ "$code" != "404" ]; then
+            echo "Expected 404 for missing page, got $code"
+            exit 1
+          fi
+          echo "404 handling OK"
+          loc=$(curl --silent --output /dev/null --write-out '%{redirect_url}' --max-time 20 "$DEPLOY_URL/gallery/$Q")
+          case "$loc" in
+            */social-media-gallery/*) echo "Legacy gallery redirect OK ($loc)" ;;
+            *) echo "Legacy gallery redirect failed: $loc"; exit 1 ;;
+          esac

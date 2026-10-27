@@ -1,0 +1,9 @@
+name = "salonkchandler"
+compatibility_date = "2026-10-01"
+main = "src/worker.js"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+not_found_handling = "404-page"
