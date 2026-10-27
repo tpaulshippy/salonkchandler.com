@@ -18,6 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
+  const cue = document.querySelector(".scroll-cue");
+  if (cue) {
+    cue.addEventListener("click", (e) => {
+      // Mobile shows the alternate contact band (mirrors Divi row_1).
+      if (window.innerWidth <= 980) {
+        const m = document.getElementById("visit-m");
+        if (m) {
+          e.preventDefault();
+          m.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  }
   const y = document.getElementById("yr");
   if (y) y.textContent = new Date().getFullYear();
 
