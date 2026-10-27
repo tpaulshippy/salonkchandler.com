@@ -278,7 +278,7 @@ footer img{width:17px;height:17px;vertical-align:-3px;margin-right:.65em;opacity
   main>section.video-full,main>section.band,main>section.band-photo,main>section#schedule{padding-top:0;padding-bottom:0}
   main>div.page-hero{padding-top:50px;padding-bottom:50px}
   .band .wrap{padding-top:40px;padding-bottom:40px}
-  .hero{padding-top:50px;padding-bottom:50px;min-height:100vh}
+  .hero{padding-top:50px;padding-bottom:50px;min-height:calc(100vh + 100px)}
   .hero-inner{padding-top:0;padding-bottom:0}
   .band-photo{min-height:161px}
   .slider{min-height:335px}
