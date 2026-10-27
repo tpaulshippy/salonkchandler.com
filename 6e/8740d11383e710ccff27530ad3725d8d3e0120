@@ -1,0 +1,88 @@
+README.md
+  h_6bbd00fe0a456a 1,3-6,12,17-19,21-24,43,45,47-62,66-68,70,72-74
+public/404.html
+  h_6bbd00fe0a456a 7-9,12-13
+public/assets/vendor/wp-content/et-cache/1/1/315/et-core-unified-deferred-315.min.css
+  h_6bbd00fe0a456a 1
+public/assets/vendor/wp-content/et-cache/1/1/321/et-core-unified-deferred-321.min.css
+  h_6bbd00fe0a456a 1
+public/assets/vendor/wp-content/et-cache/1/1/global/et-divi-customizer-global.min.css
+  h_6bbd00fe0a456a 1
+public/assets/vendor/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg
+  h_6bbd00fe0a456a 1-432
+public/assets/vendor/wp-content/themes/Divi/core/admin/fonts/modules/base/modules.svg
+  h_6bbd00fe0a456a 1-53
+public/assets/vendor/wp-content/themes/Divi/core/admin/js/common.js
+  h_6bbd00fe0a456a 1-50
+public/assets/vendor/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js
+  h_6bbd00fe0a456a 1-365
+public/assets/vendor/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js
+  h_6bbd00fe0a456a 1-9,11-18,20-27,30-51,53-79,81-87
+public/assets/vendor/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js
+  h_6bbd00fe0a456a 1-372
+public/assets/vendor/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js
+  h_6bbd00fe0a456a 1-33
+public/assets/vendor/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js
+  h_6bbd00fe0a456a 1-29
+public/assets/vendor/wp-content/themes/Divi/js/scripts.min.js
+  h_6bbd00fe0a456a 1-2
+public/assets/vendor/wp-includes/js/comment-reply.min.js
+  h_6bbd00fe0a456a 1-2
+public/assets/vendor/wp-includes/js/jquery/jquery-migrate.min.js
+  h_6bbd00fe0a456a 1-2
+public/assets/vendor/wp-includes/js/jquery/jquery.min.js
+  h_6bbd00fe0a456a 1-3
+public/assets/vendor/wp-includes/js/mediaelement/mediaelement-and-player.min.js
+  h_6bbd00fe0a456a 1-12
+public/assets/vendor/wp-includes/js/mediaelement/mediaelement-migrate.min.js
+  h_6bbd00fe0a456a 1
+public/assets/vendor/wp-includes/js/mediaelement/wp-mediaelement.min.js
+  h_6bbd00fe0a456a 1
+public/blog/2016/05/11/449-2/index.html
+  h_6bbd00fe0a456a 1-278
+public/blog/2016/05/11/review-from-isabel/index.html
+  h_6bbd00fe0a456a 1-278
+public/blog/2016/05/11/review-from-jaimie/index.html
+  h_6bbd00fe0a456a 1-278
+public/blog/2016/05/11/review-from-jennifer/index.html
+  h_6bbd00fe0a456a 1-279
+public/blog/2016/05/11/review-from-ronni/index.html
+  h_6bbd00fe0a456a 1-278
+public/blog/2016/05/11/review-from-vanessa/index.html
+  h_6bbd00fe0a456a 1-284
+public/blog/2016/05/12/review-from-angela/index.html
+  h_6bbd00fe0a456a 1-279
+public/blog/2016/05/13/jennifer-in-phoenix-arizona/index.html
+  h_6bbd00fe0a456a 1-279
+public/blog/2016/08/08/review-from-haley/index.html
+  h_6bbd00fe0a456a 1-217
+public/blog/2016/08/08/review-from-sherri/index.html
+  h_6bbd00fe0a456a 1-217
+public/blogreviews/index.html
+  h_6bbd00fe0a456a 4-91,93-525
+public/index.html
+  h_6bbd00fe0a456a 4-78,80-482
+public/meet-kelley/index.html
+  h_6bbd00fe0a456a 4-84,86-502
+public/payment-plans/index.html
+  h_6bbd00fe0a456a 4-71,73-143,145,149,151-153,157-161,167-252
+public/products/index.html
+  h_6bbd00fe0a456a 4-79,81-449
+public/services/index.html
+  h_6bbd00fe0a456a 4-73,75-492,494-504,506-511,513-519,521,523-564
+public/social-media-gallery/index.html
+  h_6bbd00fe0a456a 4-74,76-669
+src/worker.js
+  h_6bbd00fe0a456a 15-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6e8740d11383e710ccff27530ad3725d8d3e0120",
+  "prompts": {},
+  "humans": {
+    "h_6bbd00fe0a456a": {
+      "author": "Paul Shippy <pshippy@gmail.com>"
+    }
+  }
+}
