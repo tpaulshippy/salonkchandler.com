@@ -63,9 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const card = a.closest("article");
       const full = card && card.querySelector(".full");
-      if (full) {
+      if (full && (full.hidden || a.textContent === "read less")) {
         full.hidden = !full.hidden;
         a.textContent = full.hidden ? "read more" : "read less";
+      } else if (card) {
+        const collapsed = card.classList.toggle("collapsed");
+        a.textContent = collapsed ? "read more" : "read less";
       }
     });
   });

@@ -163,7 +163,10 @@ main{padding-top:89px}
 /* Reviews */
 .stars{width:150px;margin-bottom:.5rem}
 .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
-@media(max-width:760px){.rev-grid article:nth-child(2){order:4}.rev-grid article:nth-child(3){order:2}.rev-grid article:nth-child(4){order:5}.rev-grid article:nth-child(5){order:3}}
+.rev-col article{margin-bottom:60px}
+.rev-col article:last-child{margin-bottom:0}
+.rev-grid article.collapsed p.body{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:760px){.rev-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.rev-grid{grid-template-columns:1fr}}
 .rev-grid h2{font-size:16px}
 .rev-grid p{color:#666}
