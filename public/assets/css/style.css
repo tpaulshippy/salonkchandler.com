@@ -132,7 +132,7 @@ main{padding-top:89px}
 .bio{display:grid;grid-template-columns:1fr 304px;gap:56px;align-items:start}
 @media(max-width:700px){.bio{grid-template-columns:1fr}}
 .bio img{width:207px;border-radius:0}
-@media(max-width:700px){.bio img{width:100%}}
+
 
 /* Cert / logo grids (no cards — plain like Divi) */
 .logos{display:grid;gap:0 3.5rem;align-items:start;text-align:center}
@@ -253,7 +253,10 @@ footer img{width:17px;height:17px;vertical-align:-3px;margin-right:.65em;opacity
 
 .only-mobile-band{display:none}
 @media(max-width:980px){
-  .page-hero{min-height:0}
+  .ph-meet{min-height:331px}
+.ph-blog{min-height:291px}
+.ph-services{min-height:231px}
+.ph-products{min-height:391px}
   .hero{min-height:100vh}
   .hero-inner{padding:50px 10px}
   .only-mobile .price-item{display:block}
@@ -280,4 +283,8 @@ footer img{width:17px;height:17px;vertical-align:-3px;margin-right:.65em;opacity
   .band-photo{min-height:161px}
   .slider{min-height:335px}
   .logos img{max-width:none}
+}
+
+@media(max-width:980px){
+  .cert-col>div{margin-bottom:60px}
 }
