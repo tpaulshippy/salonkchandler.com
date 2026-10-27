@@ -66,7 +66,7 @@ main{padding-top:89px}
 .hero-inner{position:relative;z-index:1;padding:4rem 5%;max-width:800px}
 .hero h1{color:#fff;font-weight:700;font-size:clamp(2rem,3.75vw,3rem);line-height:1}
 .hero .sub{font-size:clamp(1.1rem,1.875vw,1.5rem);font-weight:500}
-.scroll-cue{display:inline-block;margin-top:1.6rem;color:#fff;font-size:2.4rem;line-height:1;animation:bob 2s infinite;text-decoration:none!important}
+.scroll-cue{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border:2px solid #fff;border-radius:50%;margin-top:1.6rem;color:#fff;font-size:1.6rem;line-height:1;animation:bob 2s infinite;text-decoration:none!important}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
 
 /* Bands */
