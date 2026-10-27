@@ -232,3 +232,14 @@ footer img{width:17px;height:24px;vertical-align:middle;margin-right:.65em;opaci
 .gal-sec{padding:64px 0 38px}
 .pay-sec{padding:58px 0 23px}
 #schedule{height:62px}
+
+.bio-sec .prose>*:not(:last-child){margin-bottom:17px}
+.talent-sec .prose>*:not(:last-child){margin-bottom:30px}
+.cert-col>div{margin-bottom:30px}
+.price-item{margin-bottom:14px}
+.band.gift p{max-width:400px;margin-left:auto;margin-right:auto}
+.band .contact3{padding:8px 0}
+.gal-sec{padding-top:64px}
+.ig-head{margin-bottom:36px}
+.more-toggle{color:var(--teal)}
+.rev-grid .full[hidden]{display:none}
