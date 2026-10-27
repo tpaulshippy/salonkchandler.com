@@ -1,13 +1,51 @@
-// Mobile nav + footer year. No backend, no tracking.
+// Mobile nav, footer year, featured-reviews slider. No backend, no tracking.
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menu-btn");
-  const nav = document.querySelector(".nav");
-  if (btn && nav) {
+  const navs = document.querySelectorAll(".site-header .nav");
+  if (btn) {
     btn.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      navs.forEach((n) => n.classList.toggle("open"));
+      btn.setAttribute(
+        "aria-expanded",
+        btn.getAttribute("aria-expanded") === "true" ? "false" : "true",
+      );
     });
   }
   const y = document.getElementById("yr");
   if (y) y.textContent = new Date().getFullYear();
+
+  // Featured reviews slider (Blog/Reviews page only).
+  const slider = document.querySelector(".slider");
+  if (slider) {
+    const slides = [...slider.querySelectorAll(".slide")];
+    const dotsBox = slider.querySelector(".dots");
+    let cur = 0;
+    let timer = null;
+    const show = (i) => {
+      cur = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle("active", k === cur));
+      if (dotsBox) {
+        [...dotsBox.children].forEach((d, k) =>
+          d.classList.toggle("on", k === cur),
+        );
+      }
+    };
+    if (dotsBox) {
+      slides.forEach((_, k) => {
+        const d = document.createElement("button");
+        d.setAttribute("aria-label", "Show review " + (k + 1));
+        d.addEventListener("click", () => {
+          show(k);
+          restart();
+        });
+        dotsBox.appendChild(d);
+      });
+    }
+    const restart = () => {
+      if (timer) clearInterval(timer);
+      timer = setInterval(() => show(cur + 1), 6000);
+    };
+    show(0);
+    restart();
+  }
 });
