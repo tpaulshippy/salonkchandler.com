@@ -56,3 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
     restart();
   }
 });
+
+  // Review "read more" expander (Blog/Reviews grid).
+  document.querySelectorAll(".more-toggle").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const card = a.closest("article");
+      const full = card && card.querySelector(".full");
+      if (full) {
+        full.hidden = !full.hidden;
+        a.textContent = full.hidden ? "read more" : "read less";
+      }
+    });
+  });
