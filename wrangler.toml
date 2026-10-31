@@ -1,6 +1,9 @@
 name = "salonkchandler"
 compatibility_date = "2026-10-01"
 main = "src/worker.js"
+# Keep workers.dev serving: adding [[routes]] below would otherwise
+# disable it, breaking the pre-cutover test URL.
+workers_dev = true
 
 # Custom domains attach on every deploy; they go live once the
 # nameservers point at Cloudflare (love + patrick).
