@@ -2,6 +2,16 @@ name = "salonkchandler"
 compatibility_date = "2026-10-01"
 main = "src/worker.js"
 
+# Custom domains attach on every deploy; they go live once the
+# nameservers point at Cloudflare (love + patrick).
+[[routes]]
+pattern = "salonkchandler.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.salonkchandler.com"
+custom_domain = true
+
 [assets]
 directory = "./public"
 binding = "ASSETS"
