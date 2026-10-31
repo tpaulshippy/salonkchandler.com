@@ -1,0 +1,17 @@
+", (str(v)[:80] if not isinstance(v,(dict,list)) else json.dumps(v)[:300]))
+""
+  h_6bbd00fe0a456a 1
+wrangler.toml
+  h_6bbd00fe0a456a 5-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d67ef1892eeea56528c9e422ec97223f11437ea7",
+  "prompts": {},
+  "humans": {
+    "h_6bbd00fe0a456a": {
+      "author": "Paul Shippy <pshippy@gmail.com>"
+    }
+  }
+}
