@@ -1,0 +1,22 @@
+/* Gallery feed: profile header, photo grid, buttons. Independent of
+   Smash Balloon assets (its stylesheet is gone); plain classes only. */
+.ig-profile{display:flex;gap:1.1rem;align-items:center;margin:0 0 1.4rem}
+.ig-profile img{width:80px;height:80px;border-radius:50%;object-fit:cover;flex:none}
+.ig-profile h2{font-size:1.25rem;margin:0 0 .15rem;color:#5d2c87}
+.ig-profile p{font-size:.9rem;color:#008776;margin:0;line-height:1.45}
+#ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ig-cell{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:#f1eef5;border-radius:2px}
+.ig-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.ig-cell:hover img{transform:scale(1.05)}
+.ig-cell .ig-play{position:absolute;left:50%;top:50%;width:0;height:0;transform:translate(-50%,-50%);pointer-events:none;border-left:26px solid #fff;border-top:17px solid transparent;border-bottom:17px solid transparent;opacity:.95;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.ig-cell .ig-cap{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .6rem .55rem;font-size:.72rem;line-height:1.35;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72));opacity:0;transition:opacity .25s ease;pointer-events:none;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.ig-cell:hover .ig-cap{opacity:1}
+#ig-foot{display:flex;gap:.7rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+#ig-more{font:inherit;font-size:13px;font-weight:500;color:#fff;background:#333;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+#ig-more:hover{background:#000}
+#ig-more[hidden]{display:none}
+#ig-follow{font-size:13px;font-weight:500;color:#fff!important;background:#408BD1;border-radius:4px;padding:7px 14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+#ig-follow:hover{background:#359dff}
+#ig-follow svg{width:14px;height:14px}
+@media(max-width:980px){#ig-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){#ig-grid{grid-template-columns:1fr}.ig-profile img{width:56px;height:56px}}
